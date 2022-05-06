@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func RunPointers() {
 	i, j := 42, 2701
 
 	p := &i         // point to i

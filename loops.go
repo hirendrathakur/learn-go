@@ -3,39 +3,39 @@ package main
 import "fmt"
 import "math"
 
-func main() {
-	for_loop()
-	while_loop()
-	if_statement()
-	fmt.Println(func_1(1, 13))
-	fmt.Println(func_1(1, 5))
+func RunLoops() {
+	forLoop()
+	whileLoop()
+	ifStatement()
+	fmt.Println(func1(1, 13))
+	fmt.Println(func1(1, 5))
 }
 
-func infinite_loop() {
+func infiniteLoop() {
 	for {
 
 	}
 }
 
-func for_loop() {
+func forLoop() {
 	sum := 0
-	for i:=0; i < 10; i++ {
-		sum+=i
-	}
-	fmt.Println("Sum =>", sum)	
-}
-
-func while_loop() {
-	sum := 0
-	i := 0
-	for i<10 {
-		sum+=i
-		i+=1
+	for i := 0; i < 10; i++ {
+		sum += i
 	}
 	fmt.Println("Sum =>", sum)
 }
 
-func if_statement() {
+func whileLoop() {
+	sum := 0
+	i := 0
+	for i < 10 {
+		sum += i
+		i += 1
+	}
+	fmt.Println("Sum =>", sum)
+}
+
+func ifStatement() {
 	sqrt(-2)
 	sqrt(9)
 }
@@ -48,9 +48,9 @@ func sqrt(x float64) {
 	}
 }
 
-func func_1(x, limit int) int {
-	if a := (x+10); a < limit {
+func func1(x, limit int) int {
+	if a := (x + 10); a < limit {
 		return a
-	} 
+	}
 	return x
 }

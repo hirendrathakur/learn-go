@@ -1,13 +1,21 @@
 package main
 
-import "fmt"
-import "math/rand"
-import "math"
-import "rsc.io/quote"
+import (
+	"fmt"
+	"time"
+)
+
+func saySomething(s string, ch chan int) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
+	}
+	ch <- 0
+}
 
 func main() {
-	fmt.Println(quote.Go())
-	fmt.Println("Random number =>", rand.Intn(10))
-	fmt.Println("Square Root =>", math.Sqrt(2))
-	fmt.Println("Name starting with Capital letter is imported like math.Pi=>", math.Pi)
+	ch := make(chan int)
+	go saySomething("Hi", ch)
+	fmt.Println(<-ch)
+	fmt.Println("Done")
 }
